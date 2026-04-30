@@ -1,0 +1,31 @@
+body {
+    background-color:aliceblue;
+}
+
+.header{
+    text-align: center;
+    padding: 30px;
+    font-size: 120px;
+    color: azure;
+    background-color: cadetblue;
+}
+
+.subheader{
+    text-align: center;
+    font-size: 50px;
+    background-color: darkcyan;
+    color:azure;
+}
+
+.buttons{
+    text-align: center;
+    padding: 70px;
+}
+
+.homebutton{
+    font-size: 60px;
+    padding: 80;
+    cursor: pointer;
+    background-color:darkblue;
+    color: azure;
+}

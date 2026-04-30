@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VerseFind</title>
+        <link href="/static/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <h1 class="header">VerseFind</h1>
+        <h1 class="subheader">Our only desire is that you would know Jesus Christ as your Lord and Savior</h1>
+
+        <div class="buttons">
+            <button class="homebutton" onclick="clicked(page_load='salpage')">How can I know Jesus?</button>
+        </div>
+
+        <div class="buttons">
+            <button class="homebutton" onclick="clicked(page_load='vodpage')">Verse of the Day</button>
+        </div>
+
+        <div class="buttons">
+            <button class="homebutton" onclick="clicked(page_load='search_page')">Verse Search</button>
+        </div>
+        
+        <script>
+            function clicked(page_load) {
+                fetch("/load_page", {method: "POST", body: page_load}).then(res => {if (res.redirected) window.location.href = res.url;});
+            }
+        </script>
+    </body>
+</html>
