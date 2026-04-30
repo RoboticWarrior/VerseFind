@@ -71,6 +71,3 @@ def load_page():
         return redirect('/searchpage')
     
     return 'None'
-
-if __name__ == '__main__':
-    app.run(debug=True)
