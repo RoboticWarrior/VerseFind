@@ -34,16 +34,10 @@ def salpage():
 @app.route('/versepage')
 def versepage():
     current_date = str(date.today())
-    books = ('Genesis', 'Exodus', 'Leviticus', 'Numbers', 'Deuteronomy', 'Joshua', 'Judges', 'Ruth', '1_Samuel', '2_Samuel', '1_Kings', '2_Kings', '1_Chronicles', 
-             '2_Chronicles', 'Ezra', 'Nehemiah', 'Esther', 'Job', 'Psalms', 'Proverbs', 'Ecclesiastes', 'Song of Solomon', 'Isaiah', 'Jeremiah', 'Lamentations', 
-             'Ezekiel', 'Daniel', 'Hosea', 'Joel', 'Amos', 'Obadiah', 'Jonah', 'Micah', 'Nahum', 'Habakkuk', 'Zephaniah', 'Haggai', 'Zechariah', 'Malachi', 
-             'Matthew', 'Mark', 'Luke', 'John', 'Acts', 'Romans', '1_Corinthians', '2_Corinthians', 'Galatians', 'Ephesians', 'Philippians', 'Colossians', '1_Thessalonians', 
-             '2_Thessalonians', '1_Timothy', '2_Timothy', 'Titus', 'Philemon', 'Hebrews', 'James', '1_Peter', '2_Peter', '1_John', '2_John', '3_John', 'Jude', 'Revelation',)
-
     book = f'{'kjv'}.txt'
 
     if get_file('vod.txt')[0].strip() != current_date:
-        get_book = get_file(book)
+        get_book = get_file('Bible_books/kjv.txt')
         get_file('vod.txt', f'{current_date}\n{get_book[random.randint(0, len(get_book) - 1)].strip()}')
 
     verse = get_file('vod.txt')[1]
@@ -71,3 +65,6 @@ def load_page():
         return redirect('/searchpage')
     
     return 'None'
+
+if __name__ == 'main':
+    app.run(debug=True)
