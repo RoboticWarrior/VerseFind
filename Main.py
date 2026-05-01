@@ -34,7 +34,6 @@ def salpage():
 @app.route('/versepage')
 def versepage():
     current_date = str(date.today())
-    book = f'{'kjv'}.txt'
 
     if get_file('vod.txt')[0].strip() != current_date:
         get_book = get_file('Bible_books/kjv.txt')
