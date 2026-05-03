@@ -1,9 +1,15 @@
 from flask import Flask, request, render_template, redirect
+from Page_render import Page
 import os
 import random
 from datetime import date
 
 app = Flask(__name__)
+
+home_page = Page({
+    'header': {'data': 'VerseFind', 'size': 80},
+    'body': {'data': 'Our only mission is to let you know that Jesus Christ loves you and is Lord', 'size': 60}
+    })
 
 def get_file(file_path, write = None):
     if write == None:
