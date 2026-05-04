@@ -11,7 +11,7 @@ home_page = Page({
     'body': {'data': 'Our only mission is to let you know that Jesus Christ loves you and is Lord', 'size': 60}
     })
 
-def get_file(file_path, write = None):
+def get_file(file_path: str, write: str = None):
     if write == None:
         if os.path.exists(file_path):
             file_open = open(file_path, 'r')
@@ -31,7 +31,7 @@ def get_file(file_path, write = None):
 
 @app.route('/')
 def homepage():
-    return render_template('homepage.html')
+    return render_template('homepage.html', header=home_page.render('header', 'data'))
 
 @app.route('/salpage')
 def salpage():

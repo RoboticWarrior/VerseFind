@@ -4,5 +4,10 @@ class Page:
         self.header_size = i['header']['size']
         self.body: dict = i['body']
 
-    def render(self) -> dict:
-        page_out = {'header': self.header['data'], 'body': self.body['data']}
+    def render(self, hb: str, element: str) -> str:
+        page_out = {
+            'header': self.header['data'], 
+            'body': self.body['data']
+            }
+        
+        return page_out[hb][element]
